@@ -1,0 +1,23 @@
+---
+title: "ESMA 6605: Sampleling"
+format:
+  html:
+    code-fold: true
+jupyter: python3
+---
+
+```{python}
+print("test")
+```
+
+# Intoduction
+
+## Bayesian Machine Leerning Application: the brain
+
+- Our brain oversees the control of breathing, our decisions, memory, emotion, hunger, refle, balance =, coordination, and 
+  any undertaking that regulates our body.
+- Accomplishing this efficiently increases our chances of survival
+  which is no easy task considering the continous stram of stimuli from our body and senses our brain must 
+  process to do its job
+
+  

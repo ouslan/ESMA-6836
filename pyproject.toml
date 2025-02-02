@@ -1,0 +1,17 @@
+[project]
+name = "esma-6836"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "jupyter>=1.1.1",
+    "pymc>=5.20.0",
+    "pynvim>=0.5.2",
+]
+
+[dependency-groups]
+dev = [
+    "jupyter>=1.1.1",
+    "pynvim>=0.5.2",
+]
