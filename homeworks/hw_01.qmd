@@ -1,0 +1,55 @@
+---
+title: "ESMA 6836: Homework 1"
+format:
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
+    fig-align: "center"
+---
+
+# Homework 1
+
+
+## Instructions
+- Your task is to reproduce the code done in class with `n=1000`, `r=400`. Interpret the effect of the different priors 
+on the posterior distribution. R code is avaailable in Moodle. You can use any software you wish (R recommended for this hw). Turn code and interpretation (by email)
+
+## Code
+```{python}
+#| fig-align: 'center'
+
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy import stats
+
+# Define Parameters
+a,b,n,r = 1,1,1000,400
+
+# Define prior and Beta distribution
+theta = np.linspace(0, 1, 10000)
+pi = stats.beta.pdf(theta, a, b)
+pi1 = stats.beta.pdf(theta, r + a, n - r + b)
+
+# Create Plot
+plt.figure(figsize=(5, 3))
+plt.plot(theta, pi1, label='Posterior', color='black', lw=2)
+plt.plot(theta, pi, label='Prior', color='black', lw=1, linestyle='--')
+
+# Add legend
+plt.legend(loc='upper right', 
+           frameon=True, 
+           facecolor='gray', 
+           edgecolor='black', fontsize=12)
+plt.xlabel(r'$\theta$', fontsize=14)
+plt.ylabel('Density', fontsize=14)
+plt.title(r'Beta prior: $\alpha = 1, \beta = 1$', fontsize=16)
+
+# Show the plot
+plt.show()
+```
+
+## Interpretation
+
+- Changing the number of trials `n=1000` made the graph concentrate more on the mean
+- Changing the number of succeses `r=40` made the graph shift the mean to be in `0.4`
