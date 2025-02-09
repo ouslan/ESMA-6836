@@ -1,0 +1,48 @@
+---
+title: "ESMA 6836: Homework 2"
+author: "Alejandro Ouslan"
+format:
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
+    fig-align: "center"
+---
+
+# Homework 1
+
+
+## Instructions
+- Your task is to build a simulation to determine the probability a random dart thrown will hit anywhere within the circle. 
+  While it is fine if you solve this problem deterministically, for this homework you must develop a simulation of 1,000,000 
+  trials to estimate the probability of interest. You can use any software you wish, but you must turn in your code (by email).
+  Hint: set up a coordinate system of -1,1 in x and y for the simulation.
+
+## Code
+```{python}
+#| fig-align: 'center'
+
+import numpy as np
+
+# Define Parameters
+rng = np.random.default_rng(787)
+n = 1000000
+
+x = rng.uniform(low=-1, high=1, size=n)
+y = rng.uniform(low=-1, high=1, size=n)
+darts = (x-0)**2 + (y-0)**2
+
+sim = []
+
+for dart in darts:
+  if dart <= 1:
+    sim.append(1)
+  else:
+    sim.append(0)
+
+np.array(sim).mean()
+```
+
+## Interpretation
+
+Running the simulation for $1,000,000$ the probability of hitting the target is $\approx 78.61\%$
